@@ -21,11 +21,12 @@ public class RecipesController : ControllerBase
     }
 
     // 1 - Sua aplicação deve ter o endpoint GET /recipe
-    //Readd
+    //Read
     [HttpGet]
     public IActionResult Get()
     {
-        throw new NotImplementedException();    
+        var recipes = _service.GetRecipes();
+        return Ok(recipes);  
     }
 
     // 2 - Sua aplicação deve ter o endpoint GET /recipe/:name
