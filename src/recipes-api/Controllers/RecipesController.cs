@@ -21,7 +21,7 @@ public class RecipesController : ControllerBase
     }
 
     // 1 - Sua aplicação deve ter o endpoint GET /recipe
-    //Read
+    //Readd
     [HttpGet]
     public IActionResult Get()
     {
