@@ -33,7 +33,12 @@ public class UserController : ControllerBase
     [HttpPost]
     public IActionResult Create([FromBody]User user)
     {
-        throw new NotImplementedException();
+        _service.AddUser(user);
+        var createdUser = _service.GetUser(user.Email);
+
+        if (createdUser == null) return NotFound("Falha ao criar a receita");
+
+        return CreatedAtAction(nameof(Get), new { email = user.Email}, user);
     }
 
     // "8 - Sua aplicação deve ter o endpoint PUT /user
