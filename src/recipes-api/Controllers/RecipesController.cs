@@ -57,8 +57,8 @@ public class RecipesController : ControllerBase
     {
         try
         {
+            _service.RecipeExists(name);
             _service.UpdateRecipe(recipe);
-            recipe.Name = name;
             return NoContent();
         }
         catch
